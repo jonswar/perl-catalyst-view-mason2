@@ -24,9 +24,8 @@ sub new {
         $config{$key} .= "" if blessed( $config{$key} );
     }
 
-    # Add necessary plugins and globals
+    # Add globals
     #
-    push( @{ $config{plugins} },       'Globals' );
     push( @{ $config{allow_globals} }, '$c' );
 
     # Call superclass to create initial object
@@ -103,7 +102,7 @@ __END__
     sub bar : Local {
         ...
         $c->stash->{name} = 'Homer';
-        $c->stash->{template} = 'foo/bar';
+        $c->stash->{template} = 'foo/bar';   # .m is automatically added
     }
 
     # in root/comps/foo/bar.m
@@ -148,10 +147,6 @@ If not provided, defaults C<< $c->path_to('data') >>.
 
 Automatically includes C<$c>.
 
-=item plugins
-
-Automatically includes L<Globals|Mason::Plugin::Globals>.
-
 =back
 
 All other defaults are standard Mason.
@@ -169,7 +164,13 @@ All components have access to C<$c>, the current Catalyst context.
 Renders the component specified in C<< $c->stash->{template} >> or, if not
 specified, C<< $c->action >>.
 
-The component path is prefixed with a '/' if it does not already have one.
+The component path is prefixed with a '/' if it does not already have one, and
+Mason will automatically add a ".m" extension - to change the latter, you can
+use
+
+    __PACKAGE__->config(
+        autoextend_request_path => 0
+    );
 
 Request arguments are taken from C<< $c->stash >>.
 
