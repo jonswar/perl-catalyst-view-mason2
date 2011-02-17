@@ -2,6 +2,16 @@ package Catalyst::Helper::View::Mason2;
 use strict;
 use warnings;
 
+sub mk_compclass {
+    my ( $self, $helper ) = @_;
+    my $file = $helper->{file};
+    $helper->render_file( 'compclass', $file );
+}
+
+1;
+
+=pod
+
 =head1 NAME
 
 Catalyst::Helper::View::Mason2 - Helper for Mason 2.x Views
@@ -14,35 +24,11 @@ Catalyst::Helper::View::Mason2 - Helper for Mason 2.x Views
 
 Helper for Mason 2.x Views.
 
-=head2 METHODS
+=head1 METHODS
 
-=head3 mk_compclass
-
-=cut
-
-sub mk_compclass {
-    my ( $self, $helper ) = @_;
-    my $file = $helper->{file};
-    $helper->render_file( 'compclass', $file );
-}
-
-=head1 SEE ALSO
-
-L<Catalyst::Manual>, L<Catalyst::Test>, L<Catalyst::Request>,
-L<Catalyst::Response>, L<Catalyst::Helper>
-
-=head1 AUTHOR
-
-Jonathan Swartz <swartz@pobox.com>
-
-=head1 LICENSE
-
-This library is free software. You can redistribute it and/or modify it under
-the same terms as perl itself.
+=head2 mk_compclass
 
 =cut
-
-1;
 
 __DATA__
 
@@ -54,28 +40,3 @@ use warnings;
 use base qw(Catalyst::View::Mason2);
 
 __PACKAGE__->config();
-
-=head1 NAME
-
-[% class %] - Mason 2.x View Component for [% app %]
-
-=head1 DESCRIPTION
-
-Mason View Component for [% app %]
-
-=head1 SEE ALSO
-
-L<[% app %]>, L<Mason>
-
-=head1 AUTHOR
-
-[% author %]
-
-=head1 LICENSE
-
-This library is free software . You can redistribute it and/or modify it under
-the same terms as perl itself.
-
-=cut
-
-1;
