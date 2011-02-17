@@ -1,9 +1,6 @@
 package Catalyst::Helper::View::Mason2;
-
 use strict;
 use warnings;
-
-our $VERSION = '0.01';
 
 =head1 NAME
 

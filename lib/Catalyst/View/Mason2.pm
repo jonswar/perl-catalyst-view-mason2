@@ -80,8 +80,11 @@ sub render {
 
 1;
 
-# ABSTRACT: Mason 2.0 View Class
 __END__
+
+=head1 NAME
+
+Catalyst::View::Mason2 - Mason 2.x view class
 
 =head1 SYNOPSIS
 
