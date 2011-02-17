@@ -176,7 +176,7 @@ Request arguments are taken from C<< $c->stash >>.
 
 =item render ($c, $path, \%args)
 
-Renders the component I<$path> with I<\%args>, and returns the output.
+Renders the component C<$path> with C<\%args>, and returns the output.
 
 =back
 
