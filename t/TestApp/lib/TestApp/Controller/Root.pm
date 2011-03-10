@@ -24,7 +24,7 @@ sub noautoextend : Local {
 
     $c->stash->{current_view} = 'Mason2::NoAutoextend';
     $c->stash->{name}         = 'Mary';
-    $c->stash->{template}     = '/greet.m';
+    $c->stash->{template}     = '/greet.mc';
 }
 
 sub end : ActionClass('RenderView') {

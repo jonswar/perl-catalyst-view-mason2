@@ -4,6 +4,8 @@ Revision history for Catalyst-View-Mason2
 
 0.03  Feb 25, 2011
 
+- Use new Mason 2.05 default file extensions (.mc) in documentation and tests
+
 0.02  Feb 25, 2011
 
 - Depend on Catalyst::Action::RenderView for tests

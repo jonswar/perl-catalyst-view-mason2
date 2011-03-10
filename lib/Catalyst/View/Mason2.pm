@@ -105,10 +105,10 @@ Catalyst::View::Mason2 - Mason 2.x view class
     sub bar : Local {
         ...
         $c->stash->{name} = 'Homer';
-        $c->stash->{template} = 'foo/bar';   # .m is automatically added
+        $c->stash->{template} = 'foo/bar';   # .mc is automatically added
     }
 
-    # in root/comps/foo/bar.m
+    # in root/comps/foo/bar.mc
     <%args>
     $.name
     </%args>
@@ -168,7 +168,7 @@ Renders the component specified in C<< $c->stash->{template} >> or, if not
 specified, C<< $c->action >>.
 
 The component path is prefixed with a '/' if it does not already have one, and
-Mason will automatically add a ".m" extension - to change the latter, you can
+Mason will automatically add a ".mc" extension - to change the latter, you can
 use
 
     __PACKAGE__->config(
