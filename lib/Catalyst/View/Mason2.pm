@@ -119,6 +119,8 @@ Catalyst::View::Mason2 - Mason 2.x view class
 
 Allows you to use L<Mason 2.x|Mason> for your views.
 
+=for readme stop
+
 =head1 VIEW CONFIGURATION
 
 =over
@@ -182,5 +184,7 @@ Request arguments are taken from C<< $c->stash >>.
 Renders the component C<$path> with C<\%args>, and returns the output.
 
 =back
+
+=for readme continue
 
 =cut
